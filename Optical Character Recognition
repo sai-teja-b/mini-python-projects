@@ -1,0 +1,12 @@
+from PIL import Image
+import pytesseract
+
+pytesseract.pytesseract.tesseract_cmd = r'tesseract.exe.exe'
+
+def convert():
+  img = Image.open('download.jpg')
+  img.show()
+  text = pytesseract.image_to_string(img)
+  print(text)
+
+convert()
